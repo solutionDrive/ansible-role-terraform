@@ -1,5 +1,15 @@
 ---
-- hosts: localhost
-  remote_user: root
+- hosts: all
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+
+    - name: Install unzip
+      package:
+        name: unzip
+        state: present
+
   roles:
-    - roles/internal/solutiondrive.terraform
+    - role_under_test
