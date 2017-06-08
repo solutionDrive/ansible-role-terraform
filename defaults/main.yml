@@ -1,0 +1,9 @@
+---
+terraform_install_version: "0.9.4"
+terraform_download_destination: "/tmp/terraform_{{ terraform_install_version }}.zip"
+
+terraform_unarchive_destination: "/tmp/terraform/"
+
+terraform_execution_path: "/usr/local/bin/terraform"
+
+terraform_releases_url: "https://releases.hashicorp.com/terraform/{{ terraform_install_version }}/terraform_{{ terraform_install_version }}_darwin_amd64.zip"

@@ -1,0 +1,25 @@
+---
+- name: Download Terraform
+  get_url:
+    url: "{{ terraform_releases_url }}"
+    dest: "{{ terraform_download_destination }}"
+
+- name: Create Terraform unzip dir
+  file:
+    path: "{{ terraform_unarchive_destination }}"
+    state: directory
+    mode: 0755
+
+- name: Unzip Terraform
+  unarchive:
+    src: "{{ terraform_download_destination }}"
+    dest: "{{ terraform_unarchive_destination }}"
+    copy: no
+    creates: "{{ terraform_unarchive_destination }}/terraform"
+
+- name: Move Terraform for execution
+  copy:
+    src: "{{ terraform_unarchive_destination }}/terraform"
+    dest: "{{ terraform_execution_path }}"
+    mode: u+x,g+x,o+x
+    remote_src: true
