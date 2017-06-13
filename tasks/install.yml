@@ -5,6 +5,9 @@
   changed_when: False
   register: current_terraform_version
 
+- debug:
+    msg: "{{current_terraform_version}}"
+
 - name: Download Terraform
   get_url:
     url: "{{ terraform_releases_url }}"
