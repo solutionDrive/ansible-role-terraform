@@ -5,9 +5,6 @@
   changed_when: False
   register: current_terraform_version
 
-- debug:
-    msg: "{{current_terraform_version}}"
-
 - name: Download Terraform
   get_url:
     url: "{{ terraform_releases_url }}"
@@ -26,6 +23,7 @@
     src: "{{ terraform_download_destination }}"
     dest: "{{ terraform_unarchive_destination }}"
     copy: no
+  changed_when: False
   when: current_terraform_version.rc != 0
 
 - name: Move Terraform for execution
