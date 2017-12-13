@@ -1,5 +1,5 @@
 ---
-terraform_install_version: "0.11.0"
+terraform_install_version: "0.11.1"
 terraform_download_destination: "/tmp/terraform_{{ terraform_install_version }}.zip"
 
 terraform_unarchive_destination: "/tmp/terraform/"

@@ -1,6 +1,8 @@
 Changelog
 =========
 - UNRELEASED
+- v1.3.0
+    - [CHANGED] updated default version
 - v1.2.0
     - [CHANGED] updated default version
 - v1.1.0
