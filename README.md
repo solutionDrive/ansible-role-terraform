@@ -13,7 +13,7 @@ Role Variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    terraform_install_version: "0.11.1"
+    terraform_install_version: "0.11.3"
     
 Version which should be installed
 
